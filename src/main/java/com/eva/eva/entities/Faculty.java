@@ -3,14 +3,17 @@ package com.eva.eva.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
+@Entity
+@Table(name = "faculty")
 public class Faculty {
+
+    @Id
+    @GeneratedValue
+    private int id;
 
    @JoinColumn(name = "university_id")
     private int university_id;

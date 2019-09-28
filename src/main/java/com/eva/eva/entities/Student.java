@@ -1,7 +1,7 @@
 package com.eva.eva.entities;
 
 import com.eva.eva.entities.skill.Skill;
-import com.eva.eva.entities.skill.SkillVacancy;
+import com.eva.eva.entities.skill.SkillStudent;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,30 +9,24 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "vacancy")
+@Table(name = "student")
 @Entity
-public class Vacancy {
+public class Student {
 
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(name = "vacancy_name")
-    private String name;
-
-    @Column(name = "description")
-    private String description;
+    private String login;
 
     @OneToMany(
-            mappedBy = "vacancy",
+            mappedBy = "student",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<SkillVacancy> skills = new ArrayList<>();
-
+    private List<SkillStudent> skills = new ArrayList<>();
 }

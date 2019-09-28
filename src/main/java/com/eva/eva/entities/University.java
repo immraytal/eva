@@ -3,14 +3,12 @@ package com.eva.eva.entities;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
 @Table(name = "university")
+@Entity
 public class University {
 
     private String city;
