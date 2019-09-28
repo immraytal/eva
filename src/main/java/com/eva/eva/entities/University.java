@@ -1,23 +1,25 @@
 package com.eva.eva.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Company {
+@Table(name = "university")
+public class University {
+
+    private String city;
 
     @Id
     @GeneratedValue
-    @Column(name = "company_id")
+    @Column(name = "university_id")
     private int id;
 
-    @Column(name = "company_name")
-    private String name;
+    @Column(name = "domain")
+    private String domain;
 }
