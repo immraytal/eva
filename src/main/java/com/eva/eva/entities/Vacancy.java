@@ -2,6 +2,7 @@ package com.eva.eva.entities;
 
 import com.eva.eva.entities.skill.Skill;
 import com.eva.eva.entities.skill.SkillVacancy;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,7 +32,7 @@ public class Vacancy {
     @OneToMany(
             mappedBy = "vacancy",
             cascade = CascadeType.ALL,
-            orphanRemoval = true
+            fetch = FetchType.LAZY
     )
     private List<SkillVacancy> skills = new ArrayList<>();
 

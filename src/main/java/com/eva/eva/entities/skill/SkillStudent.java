@@ -2,6 +2,7 @@ package com.eva.eva.entities.skill;
 
 
 import com.eva.eva.entities.Student;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,10 +21,12 @@ public class SkillStudent {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("studentId")
+    @JsonIgnore
     private Student student;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @MapsId("skillId")
+    @JsonIgnore
     private Skill skill;
 
     @Column(name = "stud_level")
