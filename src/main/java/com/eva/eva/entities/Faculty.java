@@ -2,22 +2,22 @@ package com.eva.eva.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
-@Table(name = "company")
 @Entity
-public class Company {
+@Table(name = "faculty")
+public class Faculty {
 
     @Id
     @GeneratedValue
-    @Column(name = "company_id")
     private int id;
 
-    @Column(name = "company_name")
+   @JoinColumn(name = "university_id")
+    private int university_id;
+
+   @Column(name = "faculty_name")
     private String name;
 }
